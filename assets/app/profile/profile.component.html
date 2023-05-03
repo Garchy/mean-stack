@@ -1,0 +1,64 @@
+<div *ngIf="!!profile === true; else elseBlock" class="row">
+  <div class="panel panel-info col-md-4 nopadding">
+
+    <div class="panel-heading">
+      <h4>Informações Pessoais</h4>
+    </div>
+
+    <div class="profile">
+      <div class="panel-body">
+        <span class="info">Nome:</span>
+        <span>{{ profile.firstName }}</span>
+      </div>
+
+      <div class="panel-body">
+        <span class="info">Sobrenome:</span>
+        <span>{{ profile.lastName }}</span>
+      </div>
+
+      <div class="panel-body">
+        <span class="info">Username:</span>
+        <span>{{ profile.username }}</span>
+      </div>
+
+      <div class="panel-body">
+        <span class="info">Email:</span>
+        <span>{{ profile.email }}</span>
+      </div>
+
+      <div class="panel-body">
+        <span class="info">Data de nascimento:</span>
+        <span>{{ profile.birthday }}</span>
+      </div>
+
+      <div class="panel-body">
+        <span class="info">Gênero:</span>
+        <span>{{ profile.genre }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-info col-md-8 mensages nopadding ">
+    <div class="panel-heading">
+      <h4>Minhas Mensagens</h4>
+    </div>
+
+    <div *ngIf="!!profile == true" class="scrollable0panel">
+      <div *ngFor="let msg of profile.messages">
+        <hr>
+        <div class="panel-body panel-body-mensage">
+          <div class="info espaco">
+            @{{ msg.user.username }}
+          </div>
+
+          <div>
+            {{ msg.content }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="not-logged-in-message">Você não está logado</div>
+  </ng-template>

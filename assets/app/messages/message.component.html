@@ -1,0 +1,25 @@
+<article 
+  class="panel panel-default" 
+  (click)="color = 'yellow'"
+  (dblclick)="onMudaStyle()"
+  [ngStyle]="{backgroundColor: color}" 
+  (mouseenter)="color = '#bcd3d6'" 
+  (mouseleave)="color = '#d1eaee'"
+>
+    <div class="panel-body">
+        {{ messageVarClasse.content }}
+        {{ messageVarClasseAlias.content}}
+      <!-- {{ message.content }} -->
+    </div>
+    <footer class="panel-footer">
+      <div class="author">
+        {{ messageVarClasse.username}}
+        {{ messageVarClasseAlias.username}}
+        <!-- {{ message.author }} -->
+      </div>
+      <div class="config">
+        <a (click)="onEdit()">Edit</a>
+        <a (click)="onDelete()">Delete</a>
+      </div>
+    </footer>
+</article>

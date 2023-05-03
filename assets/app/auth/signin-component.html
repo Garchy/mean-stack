@@ -1,0 +1,13 @@
+<div class="col-md-8 col-md-offset-2">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" formControlName="emailTS">
+        </div>
+        <div class="form-group">
+            <label for="pass">Senha:</label>
+            <input type="password" class="form-control" id="pass" formControlName="passwordTS">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Logar</button>
+    </form>
+</div>
